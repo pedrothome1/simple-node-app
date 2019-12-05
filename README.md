@@ -20,7 +20,7 @@ Create an app to store projects and its tasks from scratch using [Express](https
 
 - `DELETE /projects/:id`: This route must delete the project using the `id` sent via route parameters;
 
-- `POST /projects/:id/tasks`: This route must receive the `title` field and store a new task in the array of the project (defined by the `id` sent via route parameters);
+- `POST /projects/:id/tasks`: This route must receive the `title` field and store a new task in the array of the project (defined by the `id` sent via route parameters).
 
 ### Example
 
@@ -38,7 +38,7 @@ If I call the `POST /projects` route sending `{ id: 1, title: 'New project' }` a
 
 ### Middlewares
 
-- Create a middleware that will be used in all routes that receive the project's ID in the url parameters. The middleware must verify if the project with that ID exists. If it not exists, return an error. Otherwise, allow the request to continue normally.
+- Create a middleware that will be used in all routes that receive the project's ID in the url parameters. The middleware must verify if the project with that ID exists. If it not exists, return an error. Otherwise, allow the request to continue normally;
 
 - Create a global middleware that will be called in all requests. The middleware should print (`console.log`) a count of the requests made to the app since then.
 
