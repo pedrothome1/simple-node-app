@@ -3,45 +3,45 @@
 </h1>
 
 <h3 align="center">
-  Desafio 1: Conceitos do NodeJS
+  Challenge 1: NodeJS Concepts
 </h3>
 
-## :rocket: Sobre o desafio
+## :rocket: About the challenge
 
-Crie uma aplicação para armazenar projetos e suas tarefas do zero utilizando [Express](https://expressjs.com/pt-br/).
+Create an app to store projects and its tasks from scratch using [Express](https://expressjs.com).
 
-### Rotas
+### Routes
 
-- `POST /projects`: A rota deve receber `id` e `title` dentro do corpo e cadastrar um novo projeto dentro de um array no seguinte formato: `{ id: "1", title: 'Novo projeto', tasks: [] }`; Certifique-se de enviar tanto o ID quanto o título do projeto no formato string com aspas duplas.
+- `POST /projects`: This route must receive the `id` and `title` fields in the request body and register a new project inside an array in the following format: `{ id: "1", title: 'New project', tasks: [] }`. Make sure to send both the `id` and the `title` of the project as double-quoted strings;
 
-- `GET /projects`: Rota que lista todos projetos e suas tarefas;
+- `GET /projects`: This route lists all the projects along with its tasks;
 
-- `PUT /projects/:id`: A rota deve alterar apenas o título do projeto com o `id` presente nos parâmetros da rota;
+- `PUT /projects/:id`: This route must only update the project's title. The `id` must be sent via route parameters;
 
-- `DELETE /projects/:id`: A rota deve deletar o projeto com o `id` presente nos parâmetros da rota;
+- `DELETE /projects/:id`: This route must delete the project using the `id` sent via route parameters;
 
-- `POST /projects/:id/tasks`: A rota deve receber um campo `title` e armazenar uma nova tarefa no array de tarefas de um projeto específico escolhido através do `id` presente nos parâmetros da rota;
+- `POST /projects/:id/tasks`: This route must receive the `title` field and store a new task in the array of the project (defined by the `id` sent via route parameters);
 
-### Exemplo
+### Example
 
-Se eu chamar a rota `POST /projects` repassando `{ id: 1, title: 'Novo projeto' }` e a rota `POST /projects/1/tasks` com `{ title: 'Nova tarefa' }`, meu array de projetos deve ficar assim:
+If I call the `POST /projects` route sending `{ id: 1, title: 'New project' }` and the route `POST /projects/1/tasks` with `{ title: 'New task' }`, the array of projects should look like this:
 
 ```js
 [
   {
     id: "1",
-    title: "Novo projeto",
-    tasks: ["Nova tarefa"]
+    title: "New project",
+    tasks: ["New task"]
   }
 ];
 ```
 
 ### Middlewares
 
-- Crie um middleware que será utilizado em todas rotas que recebem o ID do projeto nos parâmetros da URL que verifica se o projeto com aquele ID existe. Se não existir retorne um erro, caso contrário permita a requisição continuar normalmente;
+- Create a middleware that will be used in all routes that receive the project's ID in the url parameters. The middleware must verify if the project with that ID exists. If it not exists, return an error. Otherwise, allow the request to continue normally.
 
-- Crie um middleware global chamado em todas requisições que imprime (`console.log`) uma contagem de quantas requisições foram feitas na aplicação até então;
+- Create a global middleware that will be called in all requests. The middleware should print (`console.log`) a count of the requests made to the app since then.
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+This project is under the MIT license. Read the [LICENSE](LICENSE.md) file for more details.
